@@ -5,7 +5,7 @@ import 'screens/register_screen.dart';
 import 'screens/main_screen.dart';
 import 'screens/task_detail_screen.dart';
 import 'screens/add_task_screen.dart';
-import 'screens/profile_screen.dart'; 
+import 'screens/profile_screen.dart';
 import 'providers/task_provider.dart';
 import 'providers/user_provider.dart';
 

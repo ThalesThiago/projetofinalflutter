@@ -11,14 +11,16 @@ class UserProvider with ChangeNotifier {
 
   User get user => _user;
 
+  
   void updateUser(User updatedUser) {
     _user = updatedUser;
-    notifyListeners();
+    notifyListeners(); 
   }
 
+  
   void updateName(String name) {
     _user.name = name;
-    notifyListeners();
+    notifyListeners(); 
   }
 
   void updateEmail(String email) {
