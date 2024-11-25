@@ -1,11 +1,14 @@
-// screens/profile_screen.dart
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../models/user.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<User>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Perfil do Usuário'),
@@ -15,14 +18,19 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Nome do Usuário',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            Text(
+              user.name,
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            const Text(
-              'email@example.com',
-              style: TextStyle(fontSize: 18),
+            Text(
+              user.email,
+              style: const TextStyle(fontSize: 18),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Data de Nascimento: ${user.dateOfBirth.toLocal()}'.split(' ')[0], // Formatação da data
+              style: const TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
