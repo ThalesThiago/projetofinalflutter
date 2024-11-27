@@ -8,6 +8,7 @@ import 'screens/main_screen.dart';
 import 'screens/task_detail_screen.dart';
 import 'screens/add_task_screen.dart';
 import 'providers/task_provider.dart';
+import 'screens/PasswordRecoveryScreen.dart';
 
 void main() {
   runApp(TaskManagerApp());
@@ -29,7 +30,8 @@ class TaskManagerApp extends StatelessWidget {
           '/register': (context) => RegisterScreen(),
           '/main': (context) => MainScreen(),
           '/addTask': (context) => AddTaskScreen(),
-          // Remova a linha '/tasks' se estiver consolidando com MainScreen
+          '/Recovery': (context) => PasswordRecoveryScreen(),
+
         },
       ),
     );
