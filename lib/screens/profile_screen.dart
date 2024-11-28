@@ -35,10 +35,11 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Lógica para editar o perfil do usuário
+                Navigator.pushNamed(context, '/editProfile');
               },
               child: const Text('Editar Perfil'),
             ),
+
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
