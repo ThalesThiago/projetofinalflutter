@@ -1,14 +1,16 @@
-// lib/main.dart
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/main_screen.dart';
+import 'screens/edit_profile_screen.dart';
 import 'screens/task_detail_screen.dart';
 import 'screens/add_task_screen.dart';
+import 'screens/profile_screen.dart';
 import 'providers/task_provider.dart';
+
 import 'screens/PasswordRecoveryScreen.dart';
+import 'providers/user_provider.dart';
 
 void main() {
   runApp(TaskManagerApp());
@@ -17,8 +19,15 @@ void main() {
 class TaskManagerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<TaskProvider>(
-      create: (_) => TaskProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<TaskProvider>(
+          create: (_) => TaskProvider(),
+        ),
+        ChangeNotifierProvider<UserProvider>(
+          create: (_) => UserProvider(),
+        ),
+      ],
       child: MaterialApp(
         title: 'Gerenciador de Tarefas',
         theme: ThemeData(
@@ -31,7 +40,9 @@ class TaskManagerApp extends StatelessWidget {
           '/main': (context) => MainScreen(),
           '/addTask': (context) => AddTaskScreen(),
           '/Recovery': (context) => PasswordRecoveryScreen(),
-
+          '/profile': (context) => ProfileScreen(), 
+          '/editProfile': (context) => EditProfileScreen(),
+         
         },
       ),
     );
