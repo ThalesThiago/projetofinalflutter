@@ -63,6 +63,12 @@ class LoginScreen extends StatelessWidget {
                 },
                 child: Text('Não tem uma conta? Registre-se'),
               ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/Recovery');
+                },
+                child: Text('Recuperar senha'),
+              ),
             ],
           ),
         ),

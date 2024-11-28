@@ -26,11 +26,13 @@ class _PasswordRecoveryScreenState extends State<PasswordRecoveryScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              
+
               TextFormField(
                 controller: _oldPasswordController,
                 obscureText: true,
                 decoration: const InputDecoration(
+                  //Como o cara vai digitar a senha antiga se ele esqueceu kkkkkk
+                  // Alterar futuramente
                   labelText: 'Senha Antiga',
                   border: OutlineInputBorder(),
                 ),
@@ -94,7 +96,8 @@ class _PasswordRecoveryScreenState extends State<PasswordRecoveryScreen> {
 
   void _changePassword() {
     if (_formKey.currentState!.validate()) {
-      Future.delayed(const Duration(seconds: 2), () {
+      // Simula o atraso de 1 segundo
+      Future.delayed(const Duration(seconds: 1), () {
         _showMessage('Senha alterada com sucesso!');
       });
     }
@@ -108,7 +111,9 @@ class _PasswordRecoveryScreenState extends State<PasswordRecoveryScreen> {
           content: Text(message),
           actions: [
             TextButton(
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () {
+                Navigator.pushNamed(context, '/login');
+              },
               child: const Text('OK'),
             ),
           ],
@@ -116,10 +121,4 @@ class _PasswordRecoveryScreenState extends State<PasswordRecoveryScreen> {
       },
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: PasswordRecoveryScreen(),
-  ));
 }

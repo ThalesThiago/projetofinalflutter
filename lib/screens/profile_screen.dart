@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/user.dart';
+import '../providers/user_provider.dart'; // Import the UserProvider
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<User>(context);
+    final user = Provider.of<UserProvider>(context).user; // Correctly access user from UserProvider
 
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +29,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              'Data de Nascimento: ${user.dateOfBirth.toLocal()}'.split(' ')[0], // Formatação da data
+              'Data de Nascimento: ${user.dateOfBirth.toLocal()}'.split(' ')[0], // Formatting the date
               style: const TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
@@ -39,11 +39,11 @@ class ProfileScreen extends StatelessWidget {
               },
               child: const Text('Editar Perfil'),
             ),
-
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                // Lógica para sair da conta
+                // Add logic for logout here
+                Navigator.pushNamed(context, '/login');
               },
               child: const Text('Logout'),
             ),

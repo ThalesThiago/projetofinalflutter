@@ -32,7 +32,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
       Provider.of<UserProvider>(context, listen: false).updateUser(
         User(
-          id: 1, // Preservando o mesmo ID
+          id: 1, // Preserving the same ID
           name: _name,
           email: _email,
           dateOfBirth: _dateOfBirth,

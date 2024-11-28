@@ -24,8 +24,7 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.person),
             title: Text('Perfil'),
             onTap: () {
-              // Navegar para a tela de perfil (implementar)
-              // Navigator.pushNamed(context, '/profile');
+              Navigator.pushNamed(context, '/profile');
             },
           ),
           ListTile(
@@ -39,8 +38,7 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.settings),
             title: Text('Configurações'),
             onTap: () {
-              // Navegar para a tela de configurações (implementar)
-              // Navigator.pushNamed(context, '/settings');
+              Navigator.pushNamed(context, '/settings'); // Navigate to Settings screen
             },
           ),
           ListTile(
