@@ -8,6 +8,8 @@ import 'screens/task_detail_screen.dart';
 import 'screens/add_task_screen.dart';
 import 'screens/profile_screen.dart';
 import 'providers/task_provider.dart';
+
+import 'screens/PasswordRecoveryScreen.dart';
 import 'providers/user_provider.dart';
 
 void main() {
@@ -37,8 +39,10 @@ class TaskManagerApp extends StatelessWidget {
           '/register': (context) => RegisterScreen(),
           '/main': (context) => MainScreen(),
           '/addTask': (context) => AddTaskScreen(),
+          '/Recovery': (context) => PasswordRecoveryScreen(),
           '/profile': (context) => ProfileScreen(), 
           '/editProfile': (context) => EditProfileScreen(),
+         
         },
       ),
     );
